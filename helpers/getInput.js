@@ -1,11 +1,12 @@
-import getPath from './getPath';
+import fs from 'fs';
+// import getPath from './getPath';
 import rl from '../utils/readline';
 
 export default async function getInput(input) {
-    console.log('HEREER')
     while (true) {
         if (input) {
-            const path = await getPath(input);
+            const path = await fs.statSync(input);
+            console.log('PATH', path)
             if (path) {
                 if (path.isFile()) {
                     return path;

@@ -7,6 +7,6 @@ const rl = readline.createInterface({
 
 const question = rl.question.bind(rl);
 
-rl.question = query => new Promise(r => question(query, r));
+rl.question = query => new Promise(res => question(query, res));
 
 export default rl;
