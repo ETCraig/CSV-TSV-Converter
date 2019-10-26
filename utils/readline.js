@@ -5,4 +5,8 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+const question = rl.question.bind(rl);
+
+rl.question = query => new Promise(r => question(query, r));
+
 export default rl;
