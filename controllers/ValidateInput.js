@@ -1,24 +1,23 @@
 import fs from 'fs';
 import rl from '../utils/readline';
-import getPath from '../helpers/getPath';
+import getInput from '../helpers/getInput';
 
 export default async function ValidateInput() {
     var myArgs = process.argv.slice(2);
-    const argvInput = null;
-    while (true) {
-        if (myArgs.input) {
-            console.log('INPUT', myArgs.input);
-            const path = await getPath(myArgs.input);
-            if(path) {
-                console.log('PATH', path, path.isFile());
-                if(path.isFile()) {
-                    argvInput = path;
-                }
-                rl.write('FAILED\n');
-            } else {
-                rl.write('FAILED\n');
-            }
-        }
-        myArgs.input = await rl.question('\nWhere is the file located?\n: ');
-    }
+    var argvInput = null;
+    var argvType = null;
+    argvInput = await getInput(myArgs.input);
+        // if(argvInput) {
+        //     console.log(argvInput)
+        //     var format = String(myArgs.format).trim().toLocaleUpperCase();
+        //     if(format) {
+        //         console.log(format)
+        //         if(format === 'CSV' || format === 'TSV') {
+        //             argvType = format;
+        //         } else {
+        //             rl.write('Please try again.');
+        //         }
+        //     }
+        //     format = await rl.question('\nIs the file format CSV (comma-separated values) or TSV (tab-separated values)?\n')
+        // }
 }
