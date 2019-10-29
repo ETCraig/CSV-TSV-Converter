@@ -10,6 +10,8 @@
   "author": "E.T. Craig",
   "license": "ISC",
   "dependencies": {
-    "esm": "^3.2.25"
+    "csv-writer": "^1.5.0",
+    "esm": "^3.2.25",
+    "mz": "^2.7.0"
   }
 }
