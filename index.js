@@ -7,11 +7,10 @@ if(!module.parent) {
         try {
             const data = await ValidateInput();
             const submission = await SubmitInput(data);
+            rl.close();
         } catch(err) {
             
         }
     }
     hello();
 }
-
-
